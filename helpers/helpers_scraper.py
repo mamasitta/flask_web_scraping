@@ -66,18 +66,21 @@ def get_links(url, clean_url):
     for link in all_links_from_page:
         try:
             address = link['href']
+            address = address.replace(' ', '')
             # checking if href belong to website
             if len(address) > 0 and address[:7] != 'http://' and address[:8] != 'https://' and address[len(address) - 1] != ';':
                 # processing url from hrefs
                 address = check_address(address)
                 if address not in new_links and address is not None:
-                    new_links.append(address)
+                    if ':' not in address:
+                        new_links.append(address)
             elif address[:len(clean_url)] == clean_url:
                 processed_link = address[len(clean_url):]
                 if len(processed_link) > 0:
                     address = check_address(processed_link)
                     if address not in new_links and address is not None:
-                        new_links.append(address)
+                        if ':' not in address:
+                            new_links.append(address)
         except KeyError:
             pass
     return new_links

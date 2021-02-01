@@ -92,7 +92,7 @@ def task_result():
         celery_result = task.state
         status = 200
         if celery_result == "SUCCESS":
-            link_to_download = "http://127.0.0.1:5000/download/?task_id={}".format(task_id)
+            link_to_download = "https://scraperflask.herokuapp.com/download/?task_id={}".format(task_id)
             result['link'] = link_to_download
         else:
             result['status'] = celery_result
@@ -125,6 +125,7 @@ def download_result():
                      attachment_filename=zipname,
                      as_attachment=True
                      )
+
 
 
 
