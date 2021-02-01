@@ -1,2 +1,2 @@
-web: gunicorn test_form.wsgi --log-file -
+web: gunicorn app:app
 
