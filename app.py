@@ -46,9 +46,7 @@ def scraping_web(self, url, lvl, date):
 @app.route('/')
 def hello():
     create_tables()
-    task = Task.query.filter_by(title='a42ccee5-0e91-4e4c-808b-d14f83c31087').first()
-    pages = Page.query.filter_by(task_id=task.id).all()
-    print(task)
+
     return "Hello World"
 
 # get website, scraping data to db
