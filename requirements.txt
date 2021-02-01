@@ -1,0 +1,10 @@
+Flask
+mechanicalsoup
+celery
+gevent
+redis
+flask-cors
+flask_sqlalchemy
+psycopg2
+flask_migrate
+flask_script
