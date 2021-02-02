@@ -32,7 +32,12 @@ def create_tables():
 @client.task()
 def delete_zip_archive(filename):
     with app.app_context():
-        os.remove(filename)
+        try:
+            shutil.rmtree(filename)
+        except OSError:
+            print("do not exist")
+            pass
+
 
 
 # -A app.client worker -l info -P gevent
