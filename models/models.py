@@ -26,3 +26,4 @@ class Page(db.Model):
 
     def __repr__(self):
         return '<Page %r>' % self.name
+

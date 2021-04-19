@@ -20,7 +20,7 @@ app.secret_key = app.config['SECRET_KEY']
 # celery config
 client = Celery(app.name, broker=app.config['BROKER_URL'], backend=app.config['CELERY_RESULT_BACKEND'])
 client.conf.update(app.config)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://aqxyvwhfambdln:6c4b569f769daedf597aacb4ee563528560d475d1b756fedf800317790884e32@ec2-107-20-15-85.compute-1.amazonaws.com:5432/dcb8fmgdu5ldte' #TODO CHANGE
+app.config['SQLALCHEMY_DATABASE_URI'] = "PUT YOUR DB URI HERE" #TODO CHANGE
 db.init_app(app)
 
 
